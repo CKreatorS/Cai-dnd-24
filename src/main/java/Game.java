@@ -11,6 +11,11 @@ public class Game {
         System.out.print("Name: ");
         String name = scanner.nextLine();
 
+        System.out.print("Role: ");
+        String role = scanner.nextLine();
+
+
+
         // TODO Create Tav instance with user input.
         // TODO Implement generateMonster()
         // TODO Collect buffs from user.
@@ -18,6 +23,11 @@ public class Game {
         // TODO Print Critical Success & Critical Failure.
         // TODO Check for 3 successful monster encounters.
         // TODO Print GAME OVER or winning message. 
+
+        Tav player = new Tav(name, role);
+        player.printCharacterSheet();
+
+        printDramaticText(player.name + " the " + player.role + " awakens in the cold Saint Saviour dungeon");
         
     }
 
