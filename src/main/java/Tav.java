@@ -4,18 +4,23 @@ public class Tav {
     // TODO - create Tav class here!
     public String name;
     public String role;
+    public String status;
     public int level;
+    public int HP;
+    public int MP;
 
-    public int constitution;
     public int strength;
-    public int dexterity;
-    public int charisma;
-    public int wisdom;
+    public int constitution;
     public int intelligence;
+    public int luck;
 
     public Tav(String name, String role) {
         this.name = name;
         this.role = role;
+        this.status = status;
+
+        this.HP = 100;
+        this.MP = 50;
 
         this.level = 1;
         int[] stats = new int[]{15, 14, 13, 12, 10, 8};
