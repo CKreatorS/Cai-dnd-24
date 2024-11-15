@@ -17,21 +17,20 @@ public class Tav {
     public Tav(String name, String role) {
         this.name = name;
         this.role = role;
-        this.status = status;
+
+        this.status = "Good";
 
         this.HP = 100;
-        this.MP = 50;
+        this.MP = 100;
 
         this.level = 1;
-        int[] stats = new int[]{15, 14, 13, 12, 10, 8};
+        int[] stats = new int[]{15, 14, 12, 10};
         shuffle(stats);
 
         this.strength = stats[0];
-        this.dexterity = stats[1];
+        this.luck = stats[1];
         this.constitution = stats[2];
         this.intelligence = stats[3];
-        this.charisma = stats[4];
-        this.wisdom = stats[5];
 
     }
 
@@ -39,15 +38,16 @@ public class Tav {
         System.out.println("Name: " + this.name);
         System.out.println("Role: " + this.role);
         System.out.println("Level: " + this.level);
+        System.out.println("Status: " + this.status);
 
         System.out.println("-----------");
 
         System.out.println("Strength:     " + this.strength);
-        System.out.println("Dexterity:    " + this.dexterity);
         System.out.println("Constitution: " + this.constitution);
         System.out.println("Intelligence: " + this.intelligence);
-        System.out.println("Charisma:     " + this.charisma);
-        System.out.println("Wisdom:       " + this.wisdom);
+        System.out.println("Luck:         " + this.luck);
+        System.out.println("HP: " + this.HP);
+        System.out.println("MP: " + this.MP);
 
     }
 

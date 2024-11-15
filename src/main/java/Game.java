@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -11,9 +12,17 @@ public class Game {
         System.out.print("Name: ");
         String name = scanner.nextLine();
 
+        System.out.println("-----");
+
+        String[] roles = new String[]{"dhampir", "speaker", "vampire hunter"};
+        System.out.println("Choose a role: Dhampir  Speaker  Vampire Hunter");
+
         System.out.print("Role: ");
         String role = scanner.nextLine();
-
+        while(!Arrays.asList(roles).contains(role.toLowerCase())) {
+            System.out.println("Please enter a valid role: ");
+            role = scanner.nextLine();
+        }
 
 
         // TODO Create Tav instance with user input.
@@ -27,7 +36,7 @@ public class Game {
         Tav player = new Tav(name, role);
         player.printCharacterSheet();
 
-        printDramaticText(player.name + " the " + player.role + " awakens in the cold Saint Saviour dungeon");
+        printDramaticText(player.name + " the " + player.role + " ( " + player.status + " )" + " is drunkenly seated in a tavern...");
         
     }
 
