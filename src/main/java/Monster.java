@@ -10,17 +10,15 @@ public class Monster {
     public Monster() {
 
         this.names = names;
-        this.difficulty = difficulty; 
-
-        int[] difficulty = new int[]{5, 7, 9, 10};
-        shuffle(difficulty);
-
-        int[] HP = new int[]{10, 20, 25, 15}; 
-        shuffle(HP);
+        this.HP = HP;
 
     }
 
     public void generateMonster() {
+
+        String[] names = new String[]{"zombie soldier", "flea man", "skeleton", "axe knight"};
+        int[] HP = new int[]{24, 18, 10, 42};
+        
 
     }
     
