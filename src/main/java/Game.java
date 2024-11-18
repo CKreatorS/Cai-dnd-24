@@ -39,12 +39,25 @@ public class Game {
         Ascii.titlescreen();
 
         printDramaticText(player.name + " the " + player.role + " ( " + player.status + " )" + " is drunkenly seated in a tavern...");
+        printDramaticText("After being kicked out, you soon encounter a monster in the wilderness!");
+        printDramaticText("You need to roll higher than: " + generateMonster());
         
     }
 
     public static int generateMonster() {
-        printDramaticText("A monster appears ahead of you!");
-        return 1;
+
+        int difficulty = (int)(Math.random() * 5) + 1;
+        if (difficulty <= 3) {
+            System.out.println("Skeleton");
+        } if (difficulty > 3 && difficulty <= 5) {
+            System.out.println("Zombie Soldier");
+        } if (difficulty == 6) {
+            System.out.println("Axe Knight");
+        }
+
+        int DC = (int)(Math.random() * 20) + 1;
+        return DC;
+        
     }
 
     public static void printDramaticText(String text) {
