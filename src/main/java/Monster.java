@@ -3,24 +3,31 @@ import java.util.Scanner;
 
 public class Monster {
 
-    public String names;
-    public int difficulty;
+    public String type;
     public int HP;
 
-    public Monster() {
+    public Monster(String type) {
 
-        this.names = names;
-        this.HP = HP;
+        this.type = type;
+        this.HP = (int)(Math.random() * 46) + 5;
 
     }
 
-    public void generateMonster() {
+    // public void generateMonster() {
+    //     Random rand = new Random();
 
-        String[] names = new String[]{"zombie soldier", "flea man", "skeleton", "axe knight"};
-        int[] HP = new int[]{24, 18, 10, 42};
+    //     String[] names = new String[]{"zombie soldier", "flea man", "skeleton", "axe knight"};
+    //     Monster[] monsters = new Monster[4];
+
+    //     for (int i = 0; i < monsters.length; i++) {
+    //         String name = names[rand.nextInt(names.length)];
+    //         int HP = rand.nextInt(50);
+        
+    //     monsters[i] = new Monster(name, HP);
+    //     }
         
 
-    }
+    // }
     
     private void shuffle(int[] array) {
         Random random = new Random();

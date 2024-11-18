@@ -40,6 +40,11 @@ public class Game {
         
     }
 
+    public static int generateMonster() {
+        printDramaticText("A monster appears ahead of you!");
+        
+    }
+
     public static void printDramaticText(String text) {
         // Delay in milliseconds
         int delay = 100;
