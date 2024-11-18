@@ -70,7 +70,7 @@ public class Ascii {
     }
 
     public static void titlescreen() {
-        String title = String.format("\n" +
+        String title = "\n" +
                         "      ...                         .x+=:.        s          ..               _                                      .                \n" + //
                         "   xH88\"`~ .x8X                  z`    ^%      :8    x .d88\"               u                                      @88>              \n" + //
                         " :8888   .f\"8888Hf                  .   <k    .88     5888R               88Nu.   u.                 u.    u.     %8P               \n" + //
@@ -86,8 +86,7 @@ public class Ascii {
                         "                                                                                                                                    \n" + //
                         "                                                                                                                                    \n" + //
                         "                                                                                                                                    \n" + //
-                        "");
+                        "";
         System.out.println(title);
-
     }
 }

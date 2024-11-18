@@ -36,13 +36,15 @@ public class Game {
         Tav player = new Tav(name, role);
         player.printCharacterSheet();
 
+        Ascii.titlescreen();
+
         printDramaticText(player.name + " the " + player.role + " ( " + player.status + " )" + " is drunkenly seated in a tavern...");
         
     }
 
     public static int generateMonster() {
         printDramaticText("A monster appears ahead of you!");
-        
+        return 1;
     }
 
     public static void printDramaticText(String text) {
