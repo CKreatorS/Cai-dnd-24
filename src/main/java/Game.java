@@ -60,6 +60,16 @@ public class Game {
         
     }
 
+    public static int rolld20() {
+        int roll = (int)(Math.random() * 20) + 1;
+        if (roll == 1) {
+            System.out.println("Critical Miss!");
+        } if (roll == 20) {
+            System.out.println("Critical Succsess");
+        }
+    return roll; 
+    }
+
     public static void printDramaticText(String text) {
         // Delay in milliseconds
         int delay = 100;
