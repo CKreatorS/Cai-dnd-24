@@ -37,8 +37,16 @@ public class Game {
         printDramaticText("After being kicked out, you soon encounter a monster in the wilderness!");
         printDramaticText("You need to roll higher than: " + generateMonster());
 
-        
-        int result = player.rollLuck() + rolld20();
+
+
+
+        // int result = player.rollLuck() + rolld20();
+        // if (result > generateMonster()) {
+        //     System.out.println("You needed a " +  + " to win you slay the monster!");
+        // }
+        // else {
+        //     System.out.println("You needed a " + generateMonster() + " to win, Game Over!");
+        // }
     
     }
 
@@ -70,14 +78,6 @@ public class Game {
             System.out.println("Critical Success!");
         }
     return roll; 
-    }
-
-    public static int roll_luck(int luck) {
-        int roll = (int)(Math.random() * luck) + 1;
-
-
-
-    return roll_luck;
     }
 
     public static void printDramaticText(String text) {
