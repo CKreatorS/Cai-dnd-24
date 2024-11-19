@@ -51,6 +51,11 @@ public class Tav {
 
     }
 
+    public int rollLuck() {
+        int l = (int)(Math.random() * this.luck) + 1;
+        return l;
+    }
+
     // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
     private void shuffle(int[] array) {
         Random random = new Random();

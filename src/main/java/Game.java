@@ -25,11 +25,6 @@ public class Game {
         }
 
 
-        // TODO Create Tav instance with user input.
-        // TODO Implement generateMonster()
-        // TODO Collect buffs from user.
-        // TODO Implement roll() method for Tav.
-        // TODO Print Critical Success & Critical Failure.
         // TODO Check for 3 successful monster encounters.
         // TODO Print GAME OVER or winning message. 
 
@@ -41,7 +36,10 @@ public class Game {
         printDramaticText(player.name + " the " + player.role + " ( " + player.status + " )" + " is drunkenly seated in a tavern...");
         printDramaticText("After being kicked out, you soon encounter a monster in the wilderness!");
         printDramaticText("You need to roll higher than: " + generateMonster());
+
         
+        int result = player.rollLuck() + rolld20();
+    
     }
 
     public static int generateMonster() {
@@ -49,9 +47,11 @@ public class Game {
         int difficulty = (int)(Math.random() * 5) + 1;
         if (difficulty <= 3) {
             System.out.println("Skeleton");
-        } if (difficulty > 3 && difficulty <= 5) {
+        } 
+        if (difficulty > 3 && difficulty <= 5) {
             System.out.println("Zombie Soldier");
-        } if (difficulty == 6) {
+        } 
+        if (difficulty == 6) {
             System.out.println("Axe Knight");
         }
 
@@ -62,12 +62,22 @@ public class Game {
 
     public static int rolld20() {
         int roll = (int)(Math.random() * 20) + 1;
+        Ascii.drawD20(roll);
         if (roll == 1) {
-            System.out.println("Critical Miss!");
-        } if (roll == 20) {
-            System.out.println("Critical Succsess");
+            System.out.println("Critical Fail!");
+        } 
+        if (roll == 20) {
+            System.out.println("Critical Success!");
         }
     return roll; 
+    }
+
+    public static int roll_luck(int luck) {
+        int roll = (int)(Math.random() * luck) + 1;
+
+
+
+    return roll_luck;
     }
 
     public static void printDramaticText(String text) {
