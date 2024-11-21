@@ -35,18 +35,28 @@ public class Game {
 
         printDramaticText(player.name + " the " + player.role + " ( " + player.status + " )" + " is drunkenly seated in a tavern...");
         printDramaticText("After being kicked out, you soon encounter a monster in the wilderness!");
-        printDramaticText("You need to roll higher than: " + generateMonster());
+        System.out.println(generateMonster());
 
+        int DC = (int)(Math.random() * 20)  + 1;
+        printDramaticText("You need to roll higher than: " + DC);
 
+        System.out.println("Press 'y' to roll luck: ");
+        String buff = scanner.nextLine();
 
+        int result = 0;
+        if(buff.equals("y")) {
+            result = player.rollLuck() + rolld20();
+        }
+        else {
+            result = rolld20();
+        }
 
-        // int result = player.rollLuck() + rolld20();
-        // if (result > generateMonster()) {
-        //     System.out.println("You needed a " +  + " to win you slay the monster!");
-        // }
-        // else {
-        //     System.out.println("You needed a " + generateMonster() + " to win, Game Over!");
-        // }
+        if (result > generateMonster()) {
+            System.out.println("You needed a " + DC + " You slay the monster!");
+        }
+        else {
+            System.out.println("You needed a " + DC + " Game Over!");
+        }
     
     }
 
@@ -63,8 +73,7 @@ public class Game {
             System.out.println("Axe Knight");
         }
 
-        int DC = (int)(Math.random() * 20) + 1;
-        return DC;
+        return difficulty;
         
     }
 
