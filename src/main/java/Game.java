@@ -46,18 +46,82 @@ public class Game {
         int result = 0;
         if(buff.equals("y")) {
             result = player.rollLuck() + rolld20();
+            player.MP -= 10; 
+            System.out.println("Your MP: " + player.MP);
         }
         else {
             result = rolld20();
+            player.HP -= 10; 
+            System.out.println("Your HP: " + player.HP);
         }
 
-        if (result > generateMonster()) {
+        if (result >= DC) {
             System.out.println("You needed a " + DC + " You slay the monster!");
         }
         else {
             System.out.println("You needed a " + DC + " Game Over!");
+            Ascii.gameover(); 
+            System.exit(0); 
         }
-    
+
+        System.out.println("---------");
+
+        printDramaticText(player.name + " ventures forth through the wilderness, encountering more enemies!");
+        System.out.println(generateMonster());
+        int DC2 = (int)(Math.random() * 20)  + 1;
+        printDramaticText("You need to roll higher than: " + DC2);
+
+        System.out.println("Press 'y' to roll luck: ");
+        String buff2 = scanner.nextLine();
+        if(buff2.equals("y")) {
+            result = player.rollLuck() + rolld20();
+            player.MP -= 10; 
+            System.out.println("Your MP: " + player.MP);
+        }
+        else {
+            result = rolld20();
+            player.HP -= 10; 
+            System.out.println("Your HP: " + player.HP);
+        }
+
+        if (result >= DC2) {
+            System.out.println("You needed a " + DC2 + " You slay the monster!");
+        }
+        else {
+            System.out.println("You needed a " + DC2 + " Game Over!");
+            Ascii.gameover();
+            System.exit(0); 
+        }
+
+        System.out.println("---------");
+
+        printDramaticText("Almost out of the woods, a castle can be seen in the distance...");
+        System.out.println(generateMonster());
+        int DC3 = (int)(Math.random() * 20)  + 1;
+        printDramaticText("You need to roll higher than: " + DC3);
+
+        System.out.println("Press 'y' to roll luck: ");
+        String buff3 = scanner.nextLine();
+        if(buff3.equals("y")) {
+            result = player.rollLuck() + rolld20();
+            player.MP -= 10; 
+            System.out.println("Your MP: " + player.MP);
+        }
+        else {
+            result = rolld20();
+            player.HP -= 10; 
+            System.out.println("Your HP: " + player.HP);
+        }
+
+        if (result >= DC3) {
+            System.out.println("You needed a " + DC3 + " You slay the monster!");
+        }
+        else {
+            System.out.println("You needed a " + DC3 + " Game Over!");
+            Ascii.gameover();
+            System.exit(0); 
+        }
+
     }
 
     public static int generateMonster() {
@@ -73,8 +137,8 @@ public class Game {
             System.out.println("Axe Knight");
         }
 
+        System.out.print("Difficulty: "); 
         return difficulty;
-        
     }
 
     public static int rolld20() {
