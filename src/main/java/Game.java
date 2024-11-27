@@ -58,7 +58,7 @@ public class Game {
         if (result >= DC) {
             System.out.println("You needed a " + DC + " You slay the monster!");
         }
-        else {
+        if (result < DC) {
             System.out.println("You needed a " + DC + " Game Over!");
             Ascii.gameover(); 
             System.exit(0); 
@@ -87,7 +87,7 @@ public class Game {
         if (result >= DC2) {
             System.out.println("You needed a " + DC2 + " You slay the monster!");
         }
-        else {
+        if (result < DC2) {
             System.out.println("You needed a " + DC2 + " Game Over!");
             Ascii.gameover();
             System.exit(0); 
@@ -116,17 +116,23 @@ public class Game {
         if (result >= DC3) {
             System.out.println("You needed a " + DC3 + " You slay the monster!");
         }
-        else {
+        if (result < DC3) {
             System.out.println("You needed a " + DC3 + " Game Over!");
             Ascii.gameover();
             System.exit(0); 
         }
 
+        // Dracula !! 
+
+        printDramaticText(player.name + " looks at the caslte in the distance...");
+        printDramaticText("You are face to face with the castle of Dracula!");
+        printDramaticText(player.name + " enters Dracula's castle, determined to rid him and his monsters from this world...");
     }
+
 
     public static int generateMonster() {
 
-        int difficulty = (int)(Math.random() * 5) + 1;
+        int difficulty = (int)(Math.random() * 6) + 1;
         if (difficulty <= 3) {
             System.out.println("Skeleton");
         } 
