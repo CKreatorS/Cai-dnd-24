@@ -133,7 +133,7 @@ public class Game {
 
         // Dracula !! 
 
-        printDramaticText(player.name + " looks at the caslte in the distance...");
+        printDramaticText(player.name + " looks at the castle in the distance...");
         printDramaticText("You are face to face with the castle of Dracula!");
         printDramaticText(player.name + " enters Dracula's castle, determined to rid him and his monsters from this world...");
 
