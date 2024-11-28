@@ -24,10 +24,6 @@ public class Game {
             role = scanner.nextLine();
         }
 
-
-        // TODO Check for 3 successful monster encounters.
-        // TODO Print GAME OVER or winning message. 
-
         Tav player = new Tav(name, role);
         player.printCharacterSheet();
 
@@ -37,7 +33,7 @@ public class Game {
         printDramaticText("After being kicked out, you soon encounter a monster in the wilderness!");
         System.out.println(generateMonster());
 
-        int DC = (int)(Math.random() * 20)  + 1;
+        int DC = (int)(Math.random() * 10) + 1;
         printDramaticText("You need to roll higher than: " + DC);
 
         System.out.println("Press 'y' to roll luck: ");
@@ -64,34 +60,41 @@ public class Game {
             System.exit(0); 
         }
 
+        player.level += 1; 
+        System.out.println("Your level: " + player.level);
+
         System.out.println("---------");
 
         printDramaticText(player.name + " ventures forth through the wilderness, encountering more enemies!");
         System.out.println(generateMonster());
-        int DC2 = (int)(Math.random() * 20)  + 1;
+        int DC2 = (int)(Math.random() * 15)  + 1;
         printDramaticText("You need to roll higher than: " + DC2);
 
         System.out.println("Press 'y' to roll luck: ");
         String buff2 = scanner.nextLine();
+        int result2 = 0;
         if(buff2.equals("y")) {
-            result = player.rollLuck() + rolld20();
+            result2 = player.rollLuck() + rolld20();
             player.MP -= 10; 
             System.out.println("Your MP: " + player.MP);
         }
         else {
-            result = rolld20();
+            result2 = rolld20();
             player.HP -= 10; 
             System.out.println("Your HP: " + player.HP);
         }
 
-        if (result >= DC2) {
+        if (result2 >= DC2) {
             System.out.println("You needed a " + DC2 + " You slay the monster!");
         }
-        if (result < DC2) {
+        if (result2 < DC2) {
             System.out.println("You needed a " + DC2 + " Game Over!");
             Ascii.gameover();
             System.exit(0); 
         }
+
+        player.level += 1; 
+        System.out.println("Your level: " + player.level);
 
         System.out.println("---------");
 
@@ -102,31 +105,39 @@ public class Game {
 
         System.out.println("Press 'y' to roll luck: ");
         String buff3 = scanner.nextLine();
+        int result3 = 0;
         if(buff3.equals("y")) {
-            result = player.rollLuck() + rolld20();
+            result3 = player.rollLuck() + rolld20();
             player.MP -= 10; 
             System.out.println("Your MP: " + player.MP);
         }
         else {
-            result = rolld20();
+            result3 = rolld20();
             player.HP -= 10; 
             System.out.println("Your HP: " + player.HP);
         }
 
-        if (result >= DC3) {
+        if (result3 >= DC3) {
             System.out.println("You needed a " + DC3 + " You slay the monster!");
         }
-        if (result < DC3) {
+        if (result3 < DC3) {
             System.out.println("You needed a " + DC3 + " Game Over!");
             Ascii.gameover();
             System.exit(0); 
         }
+
+        player.level += 1; 
+        System.out.println("Your level: " + player.level);
+
+        System.out.println("---------");
 
         // Dracula !! 
 
         printDramaticText(player.name + " looks at the caslte in the distance...");
         printDramaticText("You are face to face with the castle of Dracula!");
         printDramaticText(player.name + " enters Dracula's castle, determined to rid him and his monsters from this world...");
+
+        Ascii.thecastle();
     }
 
 
@@ -151,7 +162,9 @@ public class Game {
         int roll = (int)(Math.random() * 20) + 1;
         Ascii.drawD20(roll);
         if (roll == 1) {
-            System.out.println("Critical Fail!");
+            System.out.println("Critical Fail! Game Over...");
+            Ascii.gameover();
+            System.exit(0); 
         } 
         if (roll == 20) {
             System.out.println("Critical Success!");

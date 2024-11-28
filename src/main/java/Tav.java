@@ -53,6 +53,7 @@ public class Tav {
 
     public int rollLuck() {
         int l = (int)(Math.random() * this.luck) + 1;
+        Ascii.drawD20(l);
         return l;
     }
 
